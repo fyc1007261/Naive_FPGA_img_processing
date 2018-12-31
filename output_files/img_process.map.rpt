@@ -1,0 +1,1372 @@
+Analysis & Synthesis report for img_process
+Mon Dec 31 18:03:28 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated
+ 14. Source assignments for rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated
+ 15. Parameter Settings for User Entity Instance: vga_display:screen
+ 16. Parameter Settings for User Entity Instance: rom:img_rom|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: rom:img_rom_last|altsyncram:altsyncram_component
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "rom:img_rom_last"
+ 20. Port Connectivity Checks: "rom:img_rom"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Dec 31 18:03:28 2018      ;
+; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                   ; img_process                                ;
+; Top-level Entity Name           ; img_process                                ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 57                                         ;
+; Total pins                      ; 31                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 3,145,728                                  ;
+; Total DSP Blocks                ; 2                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI TX Channels          ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; img_process        ; img_process        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+; rom.v                            ; yes             ; User Wizard-Generated File             ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/rom.v                  ;         ;
+; clock.v                          ; yes             ; User Verilog HDL File                  ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/clock.v                ;         ;
+; vga_display.v                    ; yes             ; User Verilog HDL File                  ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/vga_display.v          ;         ;
+; img_process.v                    ; yes             ; User Verilog HDL File                  ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/img_process.v          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                  ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                      ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
+; db/altsyncram_4ff1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/db/altsyncram_4ff1.tdf ;         ;
+; img.mif                          ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/img.mif                ;         ;
+; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/db/decode_61a.tdf      ;         ;
+; db/mux_ehb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/db/mux_ehb.tdf         ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                              ;
++---------------------------------------------+--------------------------------------------+
+; Resource                                    ; Usage                                      ;
++---------------------------------------------+--------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 181                                        ;
+;                                             ;                                            ;
+; Combinational ALUT usage for logic          ; 225                                        ;
+;     -- 7 input functions                    ; 1                                          ;
+;     -- 6 input functions                    ; 132                                        ;
+;     -- 5 input functions                    ; 2                                          ;
+;     -- 4 input functions                    ; 3                                          ;
+;     -- <=3 input functions                  ; 87                                         ;
+;                                             ;                                            ;
+; Dedicated logic registers                   ; 57                                         ;
+;                                             ;                                            ;
+; I/O pins                                    ; 31                                         ;
+; Total MLAB memory bits                      ; 0                                          ;
+; Total block memory bits                     ; 3145728                                    ;
+; Total DSP Blocks                            ; 2                                          ;
+; Maximum fan-out node                        ; clock_frequency_transfer:clk_trans|clk_25M ;
+; Maximum fan-out                             ; 442                                        ;
+; Total fan-out                               ; 7021                                       ;
+; Average fan-out                             ; 9.62                                       ;
++---------------------------------------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+; |img_process                              ; 225 (83)          ; 57 (24)      ; 3145728           ; 2          ; 31   ; 0            ; |img_process                                                                                                        ; work         ;
+;    |clock_frequency_transfer:clk_trans|   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |img_process|clock_frequency_transfer:clk_trans                                                                     ; work         ;
+;    |rom:img_rom_last|                     ; 56 (0)            ; 6 (0)        ; 1572864           ; 0          ; 0    ; 0            ; |img_process|rom:img_rom_last                                                                                       ; work         ;
+;       |altsyncram:altsyncram_component|   ; 56 (0)            ; 6 (0)        ; 1572864           ; 0          ; 0    ; 0            ; |img_process|rom:img_rom_last|altsyncram:altsyncram_component                                                       ; work         ;
+;          |altsyncram_4ff1:auto_generated| ; 56 (0)            ; 6 (6)        ; 1572864           ; 0          ; 0    ; 0            ; |img_process|rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated                        ; work         ;
+;             |decode_61a:rden_decode|      ; 8 (8)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |img_process|rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|decode_61a:rden_decode ; work         ;
+;             |mux_ehb:mux2|                ; 48 (48)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |img_process|rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|mux_ehb:mux2           ; work         ;
+;    |rom:img_rom|                          ; 56 (0)            ; 6 (0)        ; 1572864           ; 0          ; 0    ; 0            ; |img_process|rom:img_rom                                                                                            ; work         ;
+;       |altsyncram:altsyncram_component|   ; 56 (0)            ; 6 (0)        ; 1572864           ; 0          ; 0    ; 0            ; |img_process|rom:img_rom|altsyncram:altsyncram_component                                                            ; work         ;
+;          |altsyncram_4ff1:auto_generated| ; 56 (0)            ; 6 (6)        ; 1572864           ; 0          ; 0    ; 0            ; |img_process|rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated                             ; work         ;
+;             |decode_61a:rden_decode|      ; 8 (8)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |img_process|rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|decode_61a:rden_decode      ; work         ;
+;             |mux_ehb:mux2|                ; 48 (48)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |img_process|rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|mux_ehb:mux2                ; work         ;
+;    |vga_display:screen|                   ; 29 (29)           ; 20 (20)      ; 0                 ; 0          ; 0    ; 0            ; |img_process|vga_display:screen                                                                                     ; work         ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
++--------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+------------+
+; Name                                                                                       ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF        ;
++--------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+------------+
+; rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 65536        ; 72           ; --           ; --           ; 4718592 ; ../img.mif ;
+; rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ALTSYNCRAM      ; AUTO ; ROM  ; 65536        ; 72           ; --           ; --           ; 4718592 ; ../img.mif ;
++--------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+------------+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary                                ;
++---------------------+-------------+---------------------+-------------------+
+; Statistic           ; Number Used ; Available per Block ; Maximum Available ;
++---------------------+-------------+---------------------+-------------------+
+; Independent 18x18   ; 2           ; 2.00                ; --                ;
+; DSP Block           ; 2           ; --                  ; --                ;
+; DSP 18-bit Element  ; 2           ; 2.00                ; --                ;
+; Unsigned Multiplier ; 2           ; --                  ; --                ;
++---------------------+-------------+---------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                         ;
++--------+--------------+---------+--------------+--------------+-------------------------------+---------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance               ; IP Include File                                               ;
++--------+--------------+---------+--------------+--------------+-------------------------------+---------------------------------------------------------------+
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |img_process|rom:img_rom      ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/rom.v ;
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |img_process|rom:img_rom_last ; C:/altera/13.1/img_processing/Naive_FPGA_img_processing/rom.v ;
++--------+--------------+---------+--------------+--------------+-------------------------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 57    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |img_process|vga_display:screen|Hcnt[9]                                                                                         ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |img_process|vga_display:screen|Vcnt[9]                                                                                         ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; No         ; |img_process|rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|mux_ehb:mux2|l3_w21_n0_mux_dataout      ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; No         ; |img_process|rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|mux_ehb:mux2|l3_w21_n0_mux_dataout ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Source assignments for rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------+
+; Assignment                      ; Value              ; From ; To                                  ;
++---------------------------------+--------------------+------+-------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                   ;
++---------------------------------+--------------------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source assignments for rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                       ;
++---------------------------------+--------------------+------+------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
++---------------------------------+--------------------+------+------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:screen ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; visible_area_h ; 640   ; Signed Integer                         ;
+; front_porch_h  ; 16    ; Signed Integer                         ;
+; sync_pulse_h   ; 96    ; Signed Integer                         ;
+; back_porch_h   ; 48    ; Signed Integer                         ;
+; whole_line_h   ; 800   ; Signed Integer                         ;
+; visible_area_v ; 480   ; Signed Integer                         ;
+; front_porch_v  ; 10    ; Signed Integer                         ;
+; sync_pulse_v   ; 2     ; Signed Integer                         ;
+; back_porch_v   ; 33    ; Signed Integer                         ;
+; whole_line_v   ; 525   ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:img_rom|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------+
+; Parameter Name                     ; Value                ; Type                         ;
++------------------------------------+----------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                      ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                      ;
+; WIDTH_A                            ; 72                   ; Signed Integer               ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer               ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WIDTH_B                            ; 1                    ; Untyped                      ;
+; WIDTHAD_B                          ; 1                    ; Untyped                      ;
+; NUMWORDS_B                         ; 1                    ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; INIT_FILE                          ; ../img.mif           ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_4ff1      ; Untyped                      ;
++------------------------------------+----------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:img_rom_last|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------+
+; Parameter Name                     ; Value                ; Type                              ;
++------------------------------------+----------------------+-----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                           ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                    ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                           ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                           ;
+; WIDTH_A                            ; 72                   ; Signed Integer                    ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer                    ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer                    ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                           ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                           ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                           ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                           ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                           ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                           ;
+; WIDTH_B                            ; 1                    ; Untyped                           ;
+; WIDTHAD_B                          ; 1                    ; Untyped                           ;
+; NUMWORDS_B                         ; 1                    ; Untyped                           ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                           ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                           ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                           ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                           ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                           ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                           ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                           ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                           ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                           ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                    ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                           ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                           ;
+; BYTE_SIZE                          ; 8                    ; Untyped                           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
+; INIT_FILE                          ; ../img.mif           ; Untyped                           ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                           ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                           ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                           ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                           ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                           ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                           ;
+; CBXI_PARAMETER                     ; altsyncram_4ff1      ; Untyped                           ;
++------------------------------------+----------------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                             ;
++-------------------------------------------+--------------------------------------------------+
+; Name                                      ; Value                                            ;
++-------------------------------------------+--------------------------------------------------+
+; Number of entity instances                ; 2                                                ;
+; Entity Instance                           ; rom:img_rom|altsyncram:altsyncram_component      ;
+;     -- OPERATION_MODE                     ; ROM                                              ;
+;     -- WIDTH_A                            ; 72                                               ;
+;     -- NUMWORDS_A                         ; 65536                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                           ;
+;     -- WIDTH_B                            ; 1                                                ;
+;     -- NUMWORDS_B                         ; 1                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                        ;
+; Entity Instance                           ; rom:img_rom_last|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                              ;
+;     -- WIDTH_A                            ; 72                                               ;
+;     -- NUMWORDS_A                         ; 65536                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                           ;
+;     -- WIDTH_B                            ; 1                                                ;
+;     -- NUMWORDS_B                         ; 1                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                        ;
++-------------------------------------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rom:img_rom_last"                                                                                                                                                                      ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; q       ; Output ; Warning  ; Output or bidir port (72 bits) is wider than the port expression (24 bits) it drives; bit(s) "q[71..24]" have no fanouts                                                            ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rom:img_rom"                                                                                                                                                                           ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; q       ; Output ; Warning  ; Output or bidir port (72 bits) is wider than the port expression (24 bits) it drives; bit(s) "q[71..24]" have no fanouts                                                            ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Dec 31 18:03:23 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off img_process -c img_process
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file rom.v
+    Info (12023): Found entity 1: rom
+Info (12021): Found 1 design units, including 1 entities, in source file clock.v
+    Info (12023): Found entity 1: clock_frequency_transfer
+Info (12021): Found 1 design units, including 1 entities, in source file vga_display.v
+    Info (12023): Found entity 1: vga_display
+Info (12021): Found 1 design units, including 1 entities, in source file img_process.v
+    Info (12023): Found entity 1: img_process
+Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
+    Info (12023): Found entity 1: Block1
+Warning (10236): Verilog HDL Implicit Net warning at img_process.v(21): created implicit net for "clk_25M"
+Info (12127): Elaborating entity "img_process" for the top level hierarchy
+Info (12128): Elaborating entity "clock_frequency_transfer" for hierarchy "clock_frequency_transfer:clk_trans"
+Info (12128): Elaborating entity "vga_display" for hierarchy "vga_display:screen"
+Warning (10230): Verilog HDL assignment warning at vga_display.v(40): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at vga_display.v(44): truncated value with size 32 to match size of target (10)
+Info (12128): Elaborating entity "rom" for hierarchy "rom:img_rom"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "rom:img_rom|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "rom:img_rom|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "rom:img_rom|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "../img.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "width_a" = "72"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4ff1.tdf
+    Info (12023): Found entity 1: altsyncram_4ff1
+Info (12128): Elaborating entity "altsyncram_4ff1" for hierarchy "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
+    Info (12023): Found entity 1: decode_61a
+Info (12128): Elaborating entity "decode_61a" for hierarchy "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|decode_61a:rden_decode"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ehb.tdf
+    Info (12023): Found entity 1: mux_ehb
+Info (12128): Elaborating entity "mux_ehb" for hierarchy "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|mux_ehb:mux2"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a24"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a25"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a26"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a27"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a28"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a29"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a30"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a31"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a32"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a33"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a34"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a35"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a36"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a37"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a38"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a39"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a40"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a41"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a42"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a43"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a44"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a45"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a46"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a47"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a48"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a49"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a50"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a51"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a52"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a53"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a54"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a55"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a56"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a57"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a58"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a59"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a60"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a61"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a62"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a63"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a64"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a65"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a66"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a67"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a68"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a69"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a70"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a71"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a96"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a97"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a98"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a99"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a100"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a101"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a102"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a103"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a104"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a105"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a106"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a107"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a108"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a109"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a110"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a111"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a112"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a113"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a114"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a115"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a116"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a117"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a118"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a119"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a120"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a121"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a122"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a123"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a124"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a125"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a126"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a127"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a128"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a129"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a130"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a131"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a132"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a133"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a134"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a135"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a136"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a137"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a138"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a139"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a140"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a141"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a142"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a143"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a168"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a169"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a170"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a171"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a172"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a173"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a174"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a175"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a176"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a177"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a178"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a179"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a180"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a181"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a182"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a183"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a184"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a185"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a186"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a187"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a188"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a189"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a190"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a191"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a192"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a193"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a194"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a195"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a196"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a197"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a198"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a199"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a200"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a201"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a202"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a203"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a204"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a205"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a206"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a207"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a208"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a209"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a210"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a211"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a212"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a213"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a214"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a215"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a240"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a241"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a242"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a243"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a244"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a245"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a246"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a247"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a248"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a249"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a250"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a251"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a252"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a253"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a254"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a255"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a256"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a257"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a258"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a259"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a260"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a261"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a262"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a263"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a264"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a265"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a266"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a267"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a268"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a269"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a270"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a271"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a272"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a273"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a274"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a275"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a276"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a277"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a278"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a279"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a280"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a281"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a282"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a283"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a284"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a285"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a286"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a287"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a312"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a313"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a314"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a315"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a316"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a317"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a318"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a319"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a320"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a321"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a322"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a323"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a324"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a325"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a326"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a327"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a328"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a329"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a330"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a331"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a332"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a333"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a334"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a335"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a336"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a337"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a338"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a339"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a340"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a341"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a342"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a343"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a344"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a345"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a346"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a347"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a348"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a349"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a350"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a351"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a352"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a353"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a354"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a355"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a356"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a357"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a358"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a359"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a384"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a385"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a386"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a387"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a388"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a389"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a390"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a391"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a392"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a393"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a394"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a395"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a396"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a397"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a398"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a399"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a400"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a401"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a402"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a403"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a404"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a405"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a406"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a407"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a408"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a409"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a410"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a411"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a412"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a413"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a414"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a415"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a416"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a417"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a418"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a419"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a420"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a421"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a422"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a423"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a424"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a425"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a426"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a427"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a428"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a429"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a430"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a431"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a456"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a457"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a458"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a459"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a460"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a461"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a462"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a463"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a464"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a465"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a466"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a467"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a468"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a469"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a470"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a471"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a472"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a473"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a474"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a475"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a476"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a477"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a478"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a479"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a480"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a481"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a482"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a483"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a484"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a485"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a486"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a487"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a488"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a489"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a490"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a491"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a492"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a493"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a494"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a495"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a496"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a497"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a498"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a499"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a500"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a501"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a502"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a503"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a528"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a529"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a530"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a531"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a532"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a533"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a534"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a535"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a536"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a537"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a538"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a539"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a540"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a541"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a542"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a543"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a544"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a545"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a546"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a547"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a548"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a549"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a550"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a551"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a552"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a553"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a554"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a555"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a556"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a557"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a558"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a559"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a560"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a561"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a562"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a563"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a564"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a565"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a566"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a567"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a568"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a569"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a570"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a571"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a572"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a573"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a574"
+        Warning (14320): Synthesized away node "rom:img_rom_last|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a575"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a24"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a25"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a26"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a27"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a28"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a29"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a30"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a31"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a32"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a33"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a34"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a35"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a36"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a37"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a38"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a39"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a40"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a41"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a42"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a43"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a44"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a45"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a46"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a47"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a48"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a49"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a50"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a51"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a52"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a53"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a54"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a55"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a56"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a57"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a58"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a59"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a60"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a61"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a62"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a63"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a64"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a65"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a66"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a67"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a68"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a69"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a70"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a71"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a96"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a97"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a98"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a99"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a100"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a101"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a102"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a103"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a104"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a105"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a106"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a107"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a108"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a109"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a110"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a111"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a112"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a113"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a114"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a115"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a116"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a117"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a118"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a119"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a120"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a121"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a122"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a123"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a124"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a125"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a126"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a127"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a128"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a129"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a130"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a131"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a132"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a133"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a134"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a135"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a136"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a137"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a138"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a139"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a140"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a141"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a142"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a143"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a168"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a169"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a170"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a171"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a172"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a173"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a174"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a175"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a176"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a177"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a178"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a179"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a180"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a181"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a182"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a183"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a184"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a185"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a186"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a187"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a188"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a189"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a190"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a191"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a192"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a193"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a194"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a195"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a196"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a197"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a198"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a199"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a200"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a201"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a202"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a203"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a204"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a205"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a206"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a207"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a208"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a209"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a210"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a211"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a212"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a213"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a214"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a215"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a240"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a241"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a242"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a243"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a244"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a245"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a246"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a247"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a248"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a249"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a250"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a251"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a252"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a253"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a254"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a255"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a256"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a257"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a258"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a259"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a260"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a261"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a262"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a263"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a264"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a265"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a266"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a267"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a268"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a269"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a270"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a271"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a272"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a273"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a274"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a275"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a276"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a277"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a278"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a279"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a280"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a281"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a282"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a283"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a284"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a285"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a286"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a287"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a312"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a313"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a314"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a315"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a316"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a317"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a318"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a319"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a320"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a321"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a322"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a323"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a324"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a325"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a326"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a327"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a328"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a329"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a330"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a331"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a332"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a333"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a334"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a335"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a336"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a337"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a338"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a339"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a340"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a341"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a342"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a343"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a344"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a345"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a346"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a347"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a348"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a349"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a350"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a351"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a352"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a353"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a354"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a355"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a356"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a357"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a358"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a359"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a384"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a385"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a386"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a387"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a388"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a389"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a390"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a391"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a392"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a393"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a394"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a395"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a396"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a397"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a398"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a399"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a400"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a401"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a402"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a403"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a404"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a405"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a406"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a407"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a408"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a409"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a410"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a411"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a412"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a413"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a414"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a415"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a416"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a417"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a418"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a419"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a420"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a421"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a422"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a423"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a424"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a425"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a426"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a427"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a428"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a429"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a430"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a431"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a456"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a457"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a458"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a459"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a460"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a461"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a462"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a463"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a464"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a465"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a466"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a467"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a468"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a469"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a470"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a471"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a472"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a473"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a474"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a475"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a476"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a477"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a478"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a479"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a480"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a481"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a482"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a483"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a484"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a485"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a486"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a487"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a488"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a489"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a490"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a491"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a492"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a493"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a494"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a495"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a496"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a497"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a498"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a499"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a500"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a501"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a502"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a503"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a528"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a529"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a530"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a531"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a532"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a533"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a534"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a535"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a536"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a537"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a538"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a539"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a540"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a541"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a542"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a543"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a544"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a545"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a546"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a547"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a548"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a549"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a550"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a551"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a552"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a553"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a554"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a555"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a556"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a557"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a558"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a559"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a560"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a561"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a562"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a563"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a564"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a565"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a566"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a567"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a568"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a569"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a570"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a571"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a572"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a573"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a574"
+        Warning (14320): Synthesized away node "rom:img_rom|altsyncram:altsyncram_component|altsyncram_4ff1:auto_generated|ram_block1a575"
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw0"
+Info (21057): Implemented 698 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 281 logic cells
+    Info (21064): Implemented 384 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 776 warnings
+    Info: Peak virtual memory: 4778 megabytes
+    Info: Processing ended: Mon Dec 31 18:03:28 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+

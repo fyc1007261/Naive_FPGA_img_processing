@@ -1,0 +1,14 @@
+module clock_frequency_transfer(
+	CLOCK_50M, CLOCK_25M
+);
+
+input CLOCK_50M;
+output CLOCK_25M;
+
+always@(posedge(CLOCK_50M))
+	begin
+		clk_25M <= ~clk_25M;
+	end
+
+
+
