@@ -1,16 +1,16 @@
-Fitter Status : Successful - Mon Dec 31 18:04:47 2018
+Fitter Status : Successful - Mon Dec 31 23:43:27 2018
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : img_process
 Top-level Entity Name : img_process
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Preliminary
-Logic utilization (in ALMs) : 208 / 32,070 ( < 1 % )
-Total registers : 58
-Total pins : 31 / 457 ( 7 % )
+Logic utilization (in ALMs) : 887 / 32,070 ( 3 % )
+Total registers : 76
+Total pins : 37 / 457 ( 8 % )
 Total virtual pins : 0
-Total block memory bits : 3,145,728 / 4,065,280 ( 77 % )
-Total DSP Blocks : 2 / 87 ( 2 % )
+Total block memory bits : 1,966,080 / 4,065,280 ( 48 % )
+Total DSP Blocks : 15 / 87 ( 17 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

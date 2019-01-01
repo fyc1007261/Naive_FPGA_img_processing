@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for img_process
-Mon Dec 31 18:05:22 2018
+Mon Dec 31 23:44:03 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -113,13 +113,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.67        ;
+; Average used               ; 1.92        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-3         ;  25.0%      ;
-;     Processor 4            ;  16.7%      ;
+;     Processors 2-4         ;  30.8%      ;
 +----------------------------+-------------+
 
 
@@ -138,7 +137,7 @@ applicable agreement for further details.
 +----------+-----------------+--------------------------------------------+------+
 ; Fmax     ; Restricted Fmax ; Clock Name                                 ; Note ;
 +----------+-----------------+--------------------------------------------+------+
-; 42.0 MHz ; 42.0 MHz        ; clock_frequency_transfer:clk_trans|clk_25M ;      ;
+; 27.5 MHz ; 27.5 MHz        ; clock_frequency_transfer:clk_trans|clk_25M ;      ;
 +----------+-----------------+--------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -154,8 +153,8 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------+---------+---------------+
 ; Clock                                      ; Slack   ; End Point TNS ;
 +--------------------------------------------+---------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -11.405 ; -53894.803    ;
-; clk                                        ; -0.068  ; -0.068        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; -35.361 ; -35575.174    ;
+; clk                                        ; 0.111   ; 0.000         ;
 +--------------------------------------------+---------+---------------+
 
 
@@ -164,8 +163,8 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clk                                        ; -1.034 ; -1.034        ;
-; clock_frequency_transfer:clk_trans|clk_25M ; 0.555  ; 0.000         ;
+; clk                                        ; -1.111 ; -1.111        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; 0.215  ; 0.000         ;
 +--------------------------------------------+--------+---------------+
 
 
@@ -186,27 +185,39 @@ No paths to report.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -20287.428    ;
-; clk                                        ; -0.394 ; -0.699        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -12733.877    ;
+; clk                                        ; -0.415 ; -0.809        ;
 +--------------------------------------------+--------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Setup Times                                                                                                                      ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 0.670 ; 1.286 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 1.636 ; 2.203 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 2.040 ; 2.824 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.220 ; 3.202 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 3.215 ; 4.448 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.651 ; 3.406 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 3.167 ; 3.594 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.415 ; 3.110 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Hold Times                                                                                                                       ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 2.597 ; 1.930 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                         ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 2.090 ; 1.452 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 2.977 ; 2.240 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.008 ; 1.400 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.423 ; 0.629 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.889 ; 1.316 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.521 ; 0.999 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.395 ; 1.887 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -214,38 +225,38 @@ No paths to report.
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 16.854 ; 18.874 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 17.029 ; 18.257 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 10.373 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 17.596 ; 19.375 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.751 ; 16.163 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.572 ; 15.844 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.165 ; 11.252 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.769 ; 11.963 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.751 ; 16.163 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.176 ; 11.270 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.645 ; 11.843 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.775 ; 12.091 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.192 ; 11.289 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 10.589 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.703 ; 15.965 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.683 ; 11.730 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.721 ; 11.893 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.047 ; 11.096 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.535 ; 11.646 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.594 ; 11.727 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.487 ; 11.598 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.501 ; 11.742 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.703 ; 15.965 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.774 ; 16.156 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.774 ; 16.156 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.611 ; 11.705 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.411 ; 11.541 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.550 ; 15.846 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.607 ; 11.739 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.040 ; 11.073 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.035 ; 11.070 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.354 ; 11.447 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 15.364 ; 16.852 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 15.124 ; 15.115 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 10.105 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 16.964 ; 18.142 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 13.211 ; 14.217 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.875 ; 13.600 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.335 ; 12.799 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.744 ; 13.418 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 13.211 ; 14.217 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.391 ; 12.767 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.057 ; 12.459 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.496 ; 12.867 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.178 ; 12.736 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 10.219 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.289 ; 15.403 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.680 ; 13.046 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.289 ; 15.403 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.826 ; 12.131 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.266 ; 12.519 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.145 ; 12.419 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.215 ; 12.505 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.178 ; 12.432 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.815 ; 13.545 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 12.882 ; 13.712 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.846 ; 13.603 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.931 ; 12.189 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.882 ; 13.712 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.633 ; 13.360 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.595 ; 13.295 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.251 ; 12.556 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.138 ; 12.511 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.085 ; 12.400 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 
 
@@ -254,38 +265,38 @@ No paths to report.
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 13.647 ; 15.387 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 13.080 ; 14.270 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 8.129  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 13.513 ; 15.382 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.667  ; 8.749  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.750 ; 12.846 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.667  ; 8.749  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.199  ; 9.343  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.911 ; 13.151 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.678  ; 8.767  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.078  ; 9.214  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.196  ; 9.432  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.691  ; 8.782  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 8.326  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.554  ; 8.602  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.135  ; 9.169  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.156  ; 9.280  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.554  ; 8.602  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.996  ; 9.083  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.043  ; 9.138  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.946  ; 9.032  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.958  ; 9.153  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.876 ; 12.988 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.552  ; 8.589  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.932 ; 13.138 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.061  ; 9.129  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.867  ; 8.959  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.726 ; 12.852 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.058  ; 9.163  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.556  ; 8.590  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.552  ; 8.589  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.826  ; 8.892  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 12.039 ; 13.388 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 10.357 ; 10.686 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 7.892  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 12.911 ; 14.301 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.445  ; 9.788  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.196 ; 10.822 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.688  ; 10.038 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.073 ; 10.647 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.494 ; 11.367 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.740  ; 10.040 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.445  ; 9.788  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.854  ; 10.171 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.588  ; 10.102 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 7.978  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.243  ; 9.503  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.995  ; 10.281 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.491 ; 12.462 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.243  ; 9.503  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.653  ; 9.870  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.546  ; 9.781  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.610  ; 9.863  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.578  ; 9.806  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.149 ; 10.776 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.351  ; 9.578  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.163 ; 10.804 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.351  ; 9.578  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.191 ; 10.887 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.972  ; 10.577 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.941  ; 10.543 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.618  ; 9.860  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.533  ; 9.847  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.486  ; 9.749  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 
 
@@ -300,7 +311,7 @@ No synchronizer chains to report.
 +-----------+-----------------+--------------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                                 ; Note ;
 +-----------+-----------------+--------------------------------------------+------+
-; 41.33 MHz ; 41.33 MHz       ; clock_frequency_transfer:clk_trans|clk_25M ;      ;
+; 26.64 MHz ; 26.64 MHz       ; clock_frequency_transfer:clk_trans|clk_25M ;      ;
 +-----------+-----------------+--------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -310,8 +321,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------+---------+---------------+
 ; Clock                                      ; Slack   ; End Point TNS ;
 +--------------------------------------------+---------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -11.599 ; -54830.279    ;
-; clk                                        ; -0.179  ; -0.179        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; -36.537 ; -36298.010    ;
+; clk                                        ; 0.024   ; 0.000         ;
 +--------------------------------------------+---------+---------------+
 
 
@@ -320,8 +331,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clk                                        ; -0.919 ; -0.919        ;
-; clock_frequency_transfer:clk_trans|clk_25M ; 0.601  ; 0.000         ;
+; clk                                        ; -1.024 ; -1.024        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; 0.277  ; 0.000         ;
 +--------------------------------------------+--------+---------------+
 
 
@@ -342,27 +353,39 @@ No paths to report.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -20480.511    ;
-; clk                                        ; -0.394 ; -0.703        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -12816.814    ;
+; clk                                        ; -0.422 ; -0.816        ;
 +--------------------------------------------+--------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Setup Times                                                                                                                      ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 0.662 ; 1.267 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 1.552 ; 2.098 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 1.959 ; 2.758 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.149 ; 3.115 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 3.236 ; 4.388 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.508 ; 3.322 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 3.060 ; 3.515 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.303 ; 3.000 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Hold Times                                                                                                                       ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 2.480 ; 1.851 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                         ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 2.010 ; 1.436 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 2.979 ; 2.289 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.944 ; 1.369 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.324 ; 0.590 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.845 ; 1.269 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.466 ; 0.920 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.350 ; 1.841 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -370,38 +393,38 @@ No paths to report.
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 16.659 ; 18.741 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 16.669 ; 18.002 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 10.046 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 17.444 ; 19.256 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.357 ; 15.853 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.118 ; 15.490 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.750 ; 10.848 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.334 ; 11.560 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.357 ; 15.853 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.762 ; 10.859 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.237 ; 11.459 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.370 ; 11.711 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.769 ; 10.887 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 10.318 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.265 ; 15.632 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.256 ; 11.365 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.336 ; 11.536 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.676 ; 10.742 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.090 ; 11.232 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.189 ; 11.367 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.104 ; 11.246 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.144 ; 11.407 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.265 ; 15.632 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.352 ; 15.838 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.352 ; 15.838 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.216 ; 11.352 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.030 ; 11.200 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.145 ; 15.521 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.205 ; 11.399 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.663 ; 10.723 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.666 ; 10.717 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.972 ; 11.097 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 15.127 ; 16.652 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 14.646 ; 14.673 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 9.741  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 16.747 ; 17.947 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 12.804 ; 13.855 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.391 ; 13.205 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.785 ; 12.312 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.270 ; 13.003 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.804 ; 13.855 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.850 ; 12.282 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.566 ; 11.984 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.931 ; 12.364 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.730 ; 12.335 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 9.910  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 13.886 ; 15.061 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.109 ; 12.544 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 13.886 ; 15.061 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.374 ; 11.714 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.710 ; 12.014 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.572 ; 11.896 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.649 ; 11.988 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.621 ; 11.931 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.351 ; 13.148 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 12.514 ; 13.407 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.391 ; 13.223 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.381 ; 11.684 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.514 ; 13.407 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.267 ; 13.052 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.130 ; 12.901 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.706 ; 12.065 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.594 ; 12.000 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.541 ; 11.904 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 
 
@@ -410,38 +433,38 @@ No paths to report.
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 13.466 ; 15.214 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 12.736 ; 14.017 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 7.888  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 13.377 ; 15.208 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.356  ; 8.450  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.396 ; 12.575 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.356  ; 8.450  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.870  ; 9.060  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.612 ; 12.905 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.369  ; 8.462  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.772  ; 8.943  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.890  ; 9.163  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.372  ; 8.484  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 8.109  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.288  ; 8.353  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.815  ; 8.913  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.876  ; 9.044  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.288  ; 8.353  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.656  ; 8.781  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.745  ; 8.895  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.668  ; 8.792  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.704  ; 8.927  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.537 ; 12.720 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.283  ; 8.338  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.604 ; 12.882 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.772  ; 8.890  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.593  ; 8.735  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.416 ; 12.587 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.760  ; 8.929  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.283  ; 8.343  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.287  ; 8.338  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.549  ; 8.657  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 11.807 ; 13.154 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 9.907  ; 10.246 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 7.615  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 12.716 ; 14.085 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.070  ; 9.408  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.824  ; 10.524 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.259  ; 9.666  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.716  ; 10.344 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 10.196 ; 11.099 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.321  ; 9.662  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.070  ; 9.408  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.410  ; 9.766  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.251  ; 9.790  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 7.734  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.913  ; 9.196  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.547  ; 9.888  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.191 ; 12.208 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.913  ; 9.196  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.219  ; 9.472  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.096  ; 9.369  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.167  ; 9.453  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.144  ; 9.408  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.795  ; 10.473 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.922  ; 9.180  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.817  ; 10.524 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.922  ; 9.180  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.935  ; 10.693 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.716  ; 10.381 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.588  ; 10.242 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.193  ; 9.474  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.110  ; 9.449  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.062  ; 9.364  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 
 
@@ -451,14 +474,14 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------+
-; Fast 1100mV 85C Model Setup Summary                                 ;
-+--------------------------------------------+--------+---------------+
-; Clock                                      ; Slack  ; End Point TNS ;
-+--------------------------------------------+--------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -6.372 ; -28810.428    ;
-; clk                                        ; -0.257 ; -0.257        ;
-+--------------------------------------------+--------+---------------+
++----------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                                  ;
++--------------------------------------------+---------+---------------+
+; Clock                                      ; Slack   ; End Point TNS ;
++--------------------------------------------+---------+---------------+
+; clock_frequency_transfer:clk_trans|clk_25M ; -18.804 ; -19355.700    ;
+; clk                                        ; -0.116  ; -0.116        ;
++--------------------------------------------+---------+---------------+
 
 
 +---------------------------------------------------------------------+
@@ -466,8 +489,8 @@ No synchronizer chains to report.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clk                                        ; -0.500 ; -0.500        ;
-; clock_frequency_transfer:clk_trans|clk_25M ; 0.304  ; 0.000         ;
+; clk                                        ; -0.544 ; -0.544        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; 0.141  ; 0.000         ;
 +--------------------------------------------+--------+---------------+
 
 
@@ -488,27 +511,39 @@ No paths to report.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -20350.297    ;
-; clk                                        ; -0.305 ; -0.305        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -12733.070    ;
+; clk                                        ; -0.394 ; -0.437        ;
 +--------------------------------------------+--------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Setup Times                                                                                                                      ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 0.274 ; 0.993 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 0.906 ; 1.566 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 1.114 ; 1.980 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.183 ; 2.315 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.717 ; 2.986 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.475 ; 2.277 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.769 ; 2.424 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.169 ; 2.114 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Hold Times                                                                                                                       ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 1.452 ; 0.668 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                          ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall   ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 1.151 ; 0.390  ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 1.735 ; 0.909  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.060 ; 0.234  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 0.793 ; -0.156 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.080 ; 0.308  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 0.877 ; 0.092  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.385 ; 0.651  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -516,79 +551,79 @@ No paths to report.
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 10.541 ; 12.330 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 10.486 ; 11.590 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 6.094  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 11.059 ; 12.651 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.184  ; 10.508 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.977  ; 10.190 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.667  ; 6.795  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.034  ; 7.306  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.184  ; 10.508 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.663  ; 6.816  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.987  ; 7.249  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.103  ; 7.439  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.682  ; 6.822  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 6.445  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.094  ; 10.304 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.988  ; 7.148  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.041  ; 7.297  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.619  ; 6.721  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.874  ; 7.072  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.942  ; 7.146  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.890  ; 7.088  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.921  ; 7.215  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.094  ; 10.304 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 9.178  ; 10.470 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.178  ; 10.470 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.939  ; 7.137  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.855  ; 7.043  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 9.020  ; 10.232 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.922  ; 7.125  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.612  ; 6.702  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.598  ; 6.711  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.791  ; 6.970  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 9.444  ; 10.828 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 8.956  ; 8.996  ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 5.894  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 10.548 ; 11.624 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.098  ; 9.053  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.768  ; 8.493  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.340  ; 7.813  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.686  ; 8.387  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.098  ; 9.053  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.387  ; 7.803  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.222  ; 7.614  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.440  ; 7.858  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.353  ; 7.912  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 6.162  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.801  ; 9.937  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.576  ; 7.988  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.801  ; 9.937  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.039  ; 7.369  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.281  ; 7.617  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.192  ; 7.521  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.237  ; 7.608  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.194  ; 7.539  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.743  ; 8.462  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 7.850  ; 8.657  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.805  ; 8.545  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.052  ; 7.371  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.850  ; 8.657  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.694  ; 8.407  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.600  ; 8.288  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.311  ; 7.652  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.197  ; 7.610  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.151  ; 7.522  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                                                                       ;
-+-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
-; Data Port   ; Clock Port                                 ; Rise  ; Fall   ; Clock Edge ; Clock Reference                            ;
-+-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.766 ; 10.397 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 8.307 ; 9.416  ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 4.951 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.744 ; 10.468 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.401 ; 5.528  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.517 ; 8.588  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.405 ; 5.528  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.729 ; 5.959  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.708 ; 8.893  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.401 ; 5.549  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.679 ; 5.890  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.787 ; 6.057  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.418 ; 5.552  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 5.266  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.363 ; 5.462  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.703 ; 5.847  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.742 ; 5.956  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.363 ; 5.462  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.591 ; 5.766  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.655 ; 5.826  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.605 ; 5.778  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.633 ; 5.889  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.633 ; 8.724  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.348 ; 5.451  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.697 ; 8.846  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.652 ; 5.826  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.568 ; 5.723  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.555 ; 8.631  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.633 ; 5.812  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.361 ; 5.451  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.348 ; 5.460  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.516 ; 5.672  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                      ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 7.656 ; 8.919 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 6.273 ; 6.600 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 4.775 ;       ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.251 ; 9.457 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.893 ; 6.237 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.399 ; 7.043 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.000 ; 6.386 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.326 ; 6.945 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.704 ; 7.552 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.039 ; 6.390 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.893 ; 6.237 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.102 ; 6.471 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.040 ; 6.561 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 5.003 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.737 ; 6.031 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.208 ; 6.551 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.358 ; 8.375 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.737 ; 6.031 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.962 ; 6.264 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.884 ; 6.180 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.924 ; 6.259 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.887 ; 6.205 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.388 ; 7.028 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.754 ; 6.046 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.430 ; 7.075 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.754 ; 6.046 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.475 ; 7.174 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.336 ; 6.952 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.245 ; 6.853 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.974 ; 6.262 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.883 ; 6.247 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.842 ; 6.171 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
 ----------------------------------------------
@@ -597,14 +632,14 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------+
-; Fast 1100mV 0C Model Setup Summary                                  ;
-+--------------------------------------------+--------+---------------+
-; Clock                                      ; Slack  ; End Point TNS ;
-+--------------------------------------------+--------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -5.960 ; -27095.998    ;
-; clk                                        ; -0.193 ; -0.193        ;
-+--------------------------------------------+--------+---------------+
++----------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                                   ;
++--------------------------------------------+---------+---------------+
+; Clock                                      ; Slack   ; End Point TNS ;
++--------------------------------------------+---------+---------------+
+; clock_frequency_transfer:clk_trans|clk_25M ; -17.870 ; -18154.520    ;
+; clk                                        ; -0.067  ; -0.067        ;
++--------------------------------------------+---------+---------------+
 
 
 +---------------------------------------------------------------------+
@@ -612,8 +647,8 @@ No synchronizer chains to report.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clk                                        ; -0.536 ; -0.536        ;
-; clock_frequency_transfer:clk_trans|clk_25M ; 0.294  ; 0.000         ;
+; clk                                        ; -0.589 ; -0.589        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; 0.146  ; 0.000         ;
 +--------------------------------------------+--------+---------------+
 
 
@@ -634,67 +669,79 @@ No paths to report.
 +--------------------------------------------+--------+---------------+
 ; Clock                                      ; Slack  ; End Point TNS ;
 +--------------------------------------------+--------+---------------+
-; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -20446.352    ;
-; clk                                        ; -0.318 ; -0.318        ;
+; clock_frequency_transfer:clk_trans|clk_25M ; -2.174 ; -12765.016    ;
+; clk                                        ; -0.398 ; -0.453        ;
 +--------------------------------------------+--------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Setup Times                                                                                                                      ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 0.307 ; 1.018 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 0.849 ; 1.501 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 0.996 ; 1.850 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.109 ; 2.178 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.604 ; 2.791 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.368 ; 2.158 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.652 ; 2.306 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.052 ; 1.974 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Hold Times                                                                                                                       ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 1.354 ; 0.617 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                          ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall   ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 1.106 ; 0.391  ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 1.716 ; 0.929  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.052 ; 0.274  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 0.791 ; -0.080 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.071 ; 0.323  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 0.872 ; 0.122  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.390 ; 0.671  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Clock to Output Times                                                                                                                ;
-+-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
-+-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 10.041 ; 11.553 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 9.880  ; 10.822 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 5.772  ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 10.527 ; 11.880 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.702  ; 9.815  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.506  ; 9.508  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.254  ; 6.353  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.584  ; 6.821  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.702  ; 9.815  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.250  ; 6.377  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.563  ; 6.786  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.686  ; 6.962  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.270  ; 6.382  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 6.061  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.579  ; 9.611  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.521  ; 6.664  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.588  ; 6.811  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.201  ; 6.278  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.430  ; 6.606  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.488  ; 6.664  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.443  ; 6.619  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.492  ; 6.741  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.579  ; 9.611  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.705  ; 9.778  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.705  ; 9.778  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.482  ; 6.660  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.427  ; 6.580  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.530  ; 9.552  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.505  ; 6.661  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.193  ; 6.262  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.176  ; 6.272  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.357  ; 6.510  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                               ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall   ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.979 ; 10.129 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 8.285 ; 8.343  ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 5.565 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 9.986 ; 10.916 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 7.664 ; 8.468  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.343 ; 7.937  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.824 ; 7.241  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.221 ; 7.822  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.664 ; 8.468  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.865 ; 7.243  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.731 ; 7.075  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.908 ; 7.282  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.918 ; 7.386  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 5.790  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 8.301 ; 9.288  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.033 ; 7.408  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 8.301 ; 9.288  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.533 ; 6.825  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.750 ; 7.061  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.665 ; 6.963  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.708 ; 7.048  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.665 ; 6.985  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.280 ; 7.892  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 7.394 ; 8.069  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.381 ; 7.987  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.543 ; 6.834  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.394 ; 8.069  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.240 ; 7.839  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.195 ; 7.753  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.794 ; 7.097  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.682 ; 7.052  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.632 ; 6.970  ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+--------+------------+--------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -702,38 +749,38 @@ No paths to report.
 +-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.323 ; 9.661 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 7.784 ; 8.721 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 4.647 ;       ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.298 ; 9.728 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.014 ; 5.112 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.078 ; 7.951 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.019 ; 5.112 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.311 ; 5.518 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.258 ; 8.235 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.014 ; 5.137 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.283 ; 5.466 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.395 ; 5.619 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.033 ; 5.138 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 4.885 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 4.969 ; 5.043 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.261 ; 5.392 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.313 ; 5.509 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 4.969 ; 5.043 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.175 ; 5.335 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.226 ; 5.380 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.182 ; 5.342 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.229 ; 5.449 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.153 ; 8.062 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 4.947 ; 5.031 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.255 ; 8.185 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.220 ; 5.382 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.163 ; 5.295 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.095 ; 7.980 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.242 ; 5.375 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 4.963 ; 5.031 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 4.947 ; 5.042 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.105 ; 5.243 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 7.235 ; 8.250 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 5.721 ; 6.001 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 4.463 ;       ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 7.771 ; 8.746 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.441 ; 5.727 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.010 ; 6.522 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.526 ; 5.862 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.898 ; 6.427 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.305 ; 7.008 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.558 ; 5.871 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.441 ; 5.727 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.612 ; 5.928 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.640 ; 6.063 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 4.640 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.269 ; 5.522 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.708 ; 6.013 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.897 ; 7.770 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.269 ; 5.522 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.473 ; 5.746 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.397 ; 5.658 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.436 ; 5.737 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.400 ; 5.685 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.962 ; 6.495 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.283 ; 5.541 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.040 ; 6.556 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.283 ; 5.541 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.054 ; 6.638 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.915 ; 6.433 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.874 ; 6.350 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.499 ; 5.745 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.408 ; 5.730 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.364 ; 5.660 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
@@ -748,31 +795,43 @@ No synchronizer chains to report.
 +---------------------------------------------+------------+--------+----------+---------+---------------------+
 ; Clock                                       ; Setup      ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +---------------------------------------------+------------+--------+----------+---------+---------------------+
-; Worst-case Slack                            ; -11.599    ; -1.034 ; N/A      ; N/A     ; -2.174              ;
-;  clk                                        ; -0.257     ; -1.034 ; N/A      ; N/A     ; -0.394              ;
-;  clock_frequency_transfer:clk_trans|clk_25M ; -11.599    ; 0.294  ; N/A      ; N/A     ; -2.174              ;
-; Design-wide TNS                             ; -54830.458 ; -1.034 ; 0.0      ; 0.0     ; -20481.214          ;
-;  clk                                        ; -0.257     ; -1.034 ; N/A      ; N/A     ; -0.703              ;
-;  clock_frequency_transfer:clk_trans|clk_25M ; -54830.279 ; 0.000  ; N/A      ; N/A     ; -20480.511          ;
+; Worst-case Slack                            ; -36.537    ; -1.111 ; N/A      ; N/A     ; -2.174              ;
+;  clk                                        ; -0.116     ; -1.111 ; N/A      ; N/A     ; -0.422              ;
+;  clock_frequency_transfer:clk_trans|clk_25M ; -36.537    ; 0.141  ; N/A      ; N/A     ; -2.174              ;
+; Design-wide TNS                             ; -36298.01  ; -1.111 ; 0.0      ; 0.0     ; -12817.63           ;
+;  clk                                        ; -0.116     ; -1.111 ; N/A      ; N/A     ; -0.816              ;
+;  clock_frequency_transfer:clk_trans|clk_25M ; -36298.010 ; 0.000  ; N/A      ; N/A     ; -12816.814          ;
 +---------------------------------------------+------------+--------+----------+---------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Setup Times                                                                                                                      ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 0.670 ; 1.286 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 1.636 ; 2.203 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 2.040 ; 2.824 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.220 ; 3.202 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 3.236 ; 4.448 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.651 ; 3.406 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 3.167 ; 3.594 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.415 ; 3.110 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Hold Times                                                                                                                       ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; Data Port ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; reset     ; clock_frequency_transfer:clk_trans|clk_25M ; 2.597 ; 1.930 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-+-----------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                         ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; reset       ; clock_frequency_transfer:clk_trans|clk_25M ; 2.090 ; 1.452 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; reverse_key ; clock_frequency_transfer:clk_trans|clk_25M ; 2.979 ; 2.289 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw0         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.008 ; 1.400 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw1         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.423 ; 0.629 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw2         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.889 ; 1.316 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw3         ; clock_frequency_transfer:clk_trans|clk_25M ; 1.521 ; 0.999 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; sw4         ; clock_frequency_transfer:clk_trans|clk_25M ; 2.395 ; 1.887 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -780,38 +839,38 @@ No synchronizer chains to report.
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 16.854 ; 18.874 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 17.029 ; 18.257 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 10.373 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 17.596 ; 19.375 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.751 ; 16.163 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.572 ; 15.844 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.165 ; 11.252 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.769 ; 11.963 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.751 ; 16.163 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.176 ; 11.270 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.645 ; 11.843 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.775 ; 12.091 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.192 ; 11.289 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 10.589 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.703 ; 15.965 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.683 ; 11.730 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.721 ; 11.893 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.047 ; 11.096 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.535 ; 11.646 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.594 ; 11.727 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.487 ; 11.598 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.501 ; 11.742 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.703 ; 15.965 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.774 ; 16.156 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.774 ; 16.156 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.611 ; 11.705 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.411 ; 11.541 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.550 ; 15.846 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.607 ; 11.739 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.040 ; 11.073 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.035 ; 11.070 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.354 ; 11.447 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 15.364 ; 16.852 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 15.124 ; 15.115 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 10.105 ;        ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 16.964 ; 18.142 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 13.211 ; 14.217 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.875 ; 13.600 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.335 ; 12.799 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.744 ; 13.418 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 13.211 ; 14.217 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.391 ; 12.767 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.057 ; 12.459 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.496 ; 12.867 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.178 ; 12.736 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;        ; 10.219 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 14.289 ; 15.403 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.680 ; 13.046 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 14.289 ; 15.403 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.826 ; 12.131 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.266 ; 12.519 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.145 ; 12.419 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.215 ; 12.505 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.178 ; 12.432 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.815 ; 13.545 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 12.882 ; 13.712 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.846 ; 13.603 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 11.931 ; 12.189 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.882 ; 13.712 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.633 ; 13.360 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.595 ; 13.295 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.251 ; 12.556 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.138 ; 12.511 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 12.085 ; 12.400 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
 
 
@@ -820,38 +879,38 @@ No synchronizer chains to report.
 +-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 ; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
 +-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
-; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.323 ; 9.661 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 7.784 ; 8.721 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 4.647 ;       ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 8.298 ; 9.728 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.014 ; 5.112 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.078 ; 7.951 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.019 ; 5.112 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.311 ; 5.518 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.258 ; 8.235 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.014 ; 5.137 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.283 ; 5.466 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.395 ; 5.619 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.033 ; 5.138 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 4.885 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 4.969 ; 5.043 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.261 ; 5.392 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.313 ; 5.509 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 4.969 ; 5.043 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.175 ; 5.335 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.226 ; 5.380 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.182 ; 5.342 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.229 ; 5.449 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.153 ; 8.062 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 4.947 ; 5.031 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.255 ; 8.185 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.220 ; 5.382 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.163 ; 5.295 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 7.095 ; 7.980 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.242 ; 5.375 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 4.963 ; 5.031 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 4.947 ; 5.042 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
-;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.105 ; 5.243 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; HS          ; clock_frequency_transfer:clk_trans|clk_25M ; 7.235 ; 8.250 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_BLANK_N ; clock_frequency_transfer:clk_trans|clk_25M ; 5.721 ; 6.001 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ; 4.463 ;       ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VS          ; clock_frequency_transfer:clk_trans|clk_25M ; 7.771 ; 8.746 ; Rise       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_B[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.441 ; 5.727 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.010 ; 6.522 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.526 ; 5.862 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.898 ; 6.427 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.305 ; 7.008 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.558 ; 5.871 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.441 ; 5.727 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.612 ; 5.928 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_B[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.640 ; 6.063 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_CLK     ; clock_frequency_transfer:clk_trans|clk_25M ;       ; 4.640 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_G[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.269 ; 5.522 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.708 ; 6.013 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.897 ; 7.770 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.269 ; 5.522 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.473 ; 5.746 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.397 ; 5.658 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.436 ; 5.737 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.400 ; 5.685 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_G[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.962 ; 6.495 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+; VGA_R[*]    ; clock_frequency_transfer:clk_trans|clk_25M ; 5.283 ; 5.541 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[0]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.040 ; 6.556 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[1]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.283 ; 5.541 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[2]   ; clock_frequency_transfer:clk_trans|clk_25M ; 6.054 ; 6.638 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[3]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.915 ; 6.433 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[4]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.874 ; 6.350 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[5]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.499 ; 5.745 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[6]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.408 ; 5.730 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
+;  VGA_R[7]   ; clock_frequency_transfer:clk_trans|clk_25M ; 5.364 ; 5.660 ; Fall       ; clock_frequency_transfer:clk_trans|clk_25M ;
 +-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
 
 
@@ -888,18 +947,24 @@ No synchronizer chains to report.
 ; VGA_B[7]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; VGA_BLANK_N ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; VGA_CLK     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; led9        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +-------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
-+----------------------------------------------------------+
-; Input Transition Times                                   ;
-+-------+--------------+-----------------+-----------------+
-; Pin   ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
-+-------+--------------+-----------------+-----------------+
-; sw0   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; reset ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; clk   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-+-------+--------------+-----------------+-----------------+
++----------------------------------------------------------------+
+; Input Transition Times                                         ;
++-------------+--------------+-----------------+-----------------+
+; Pin         ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------+--------------+-----------------+-----------------+
+; reset       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw4         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw1         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw3         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw0         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw2         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reverse_key ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------+--------------+-----------------+-----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -935,6 +1000,7 @@ No synchronizer chains to report.
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; led9        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -971,6 +1037,7 @@ No synchronizer chains to report.
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; led9        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -1007,6 +1074,7 @@ No synchronizer chains to report.
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; led9        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -1043,28 +1111,29 @@ No synchronizer chains to report.
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; led9        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                                     ;
-+--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
-; From Clock                                 ; To Clock                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
-; clock_frequency_transfer:clk_trans|clk_25M ; clk                                        ; 1        ; 1        ; 0        ; 0        ;
-; clock_frequency_transfer:clk_trans|clk_25M ; clock_frequency_transfer:clk_trans|clk_25M ; 1760     ; 0        ; 5616492  ; 15367    ;
-+--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                         ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+--------------+
+; From Clock                                 ; To Clock                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths     ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+--------------+
+; clock_frequency_transfer:clk_trans|clk_25M ; clk                                        ; 1        ; 1        ; 0        ; 0            ;
+; clock_frequency_transfer:clk_trans|clk_25M ; clock_frequency_transfer:clk_trans|clk_25M ; 1760     ; 0        ; 4486612  ; > 2147483647 ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+--------------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                                      ;
-+--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
-; From Clock                                 ; To Clock                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
-; clock_frequency_transfer:clk_trans|clk_25M ; clk                                        ; 1        ; 1        ; 0        ; 0        ;
-; clock_frequency_transfer:clk_trans|clk_25M ; clock_frequency_transfer:clk_trans|clk_25M ; 1760     ; 0        ; 5616492  ; 15367    ;
-+--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                          ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+--------------+
+; From Clock                                 ; To Clock                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths     ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+--------------+
+; clock_frequency_transfer:clk_trans|clk_25M ; clk                                        ; 1        ; 1        ; 0        ; 0            ;
+; clock_frequency_transfer:clk_trans|clk_25M ; clock_frequency_transfer:clk_trans|clk_25M ; 1760     ; 0        ; 4486612  ; > 2147483647 ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+--------------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -1087,8 +1156,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 20    ; 20   ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 182   ; 182  ;
 ; Unconstrained Output Ports      ; 28    ; 28   ;
 ; Unconstrained Output Port Paths ; 48    ; 48   ;
 +---------------------------------+-------+------+
@@ -1100,7 +1169,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Dec 31 18:05:08 2018
+    Info: Processing started: Mon Dec 31 23:43:48 2018
 Info: Command: quartus_sta img_process -c img_process
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1117,23 +1186,23 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.405
+Info (332146): Worst-case setup slack is -35.361
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.405          -53894.803 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.068              -0.068 clk 
-Info (332146): Worst-case hold slack is -1.034
+    Info (332119):   -35.361          -35575.174 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):     0.111               0.000 clk 
+Info (332146): Worst-case hold slack is -1.111
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.034              -1.034 clk 
-    Info (332119):     0.555               0.000 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -1.111              -1.111 clk 
+    Info (332119):     0.215               0.000 clock_frequency_transfer:clk_trans|clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174          -20287.428 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.394              -0.699 clk 
+    Info (332119):    -2.174          -12733.877 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.415              -0.809 clk 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
@@ -1141,23 +1210,23 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.599
+Info (332146): Worst-case setup slack is -36.537
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.599          -54830.279 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.179              -0.179 clk 
-Info (332146): Worst-case hold slack is -0.919
+    Info (332119):   -36.537          -36298.010 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):     0.024               0.000 clk 
+Info (332146): Worst-case hold slack is -1.024
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.919              -0.919 clk 
-    Info (332119):     0.601               0.000 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -1.024              -1.024 clk 
+    Info (332119):     0.277               0.000 clock_frequency_transfer:clk_trans|clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174          -20480.511 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.394              -0.703 clk 
+    Info (332119):    -2.174          -12816.814 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.422              -0.816 clk 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
@@ -1165,50 +1234,50 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.372
+Info (332146): Worst-case setup slack is -18.804
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.372          -28810.428 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.257              -0.257 clk 
-Info (332146): Worst-case hold slack is -0.500
+    Info (332119):   -18.804          -19355.700 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.116              -0.116 clk 
+Info (332146): Worst-case hold slack is -0.544
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.500              -0.500 clk 
-    Info (332119):     0.304               0.000 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.544              -0.544 clk 
+    Info (332119):     0.141               0.000 clock_frequency_transfer:clk_trans|clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174          -20350.297 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.305              -0.305 clk 
+    Info (332119):    -2.174          -12733.070 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.394              -0.437 clk 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.960
+Info (332146): Worst-case setup slack is -17.870
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.960          -27095.998 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.193              -0.193 clk 
-Info (332146): Worst-case hold slack is -0.536
+    Info (332119):   -17.870          -18154.520 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.067              -0.067 clk 
+Info (332146): Worst-case hold slack is -0.589
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.536              -0.536 clk 
-    Info (332119):     0.294               0.000 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.589              -0.589 clk 
+    Info (332119):     0.146               0.000 clock_frequency_transfer:clk_trans|clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174          -20446.352 clock_frequency_transfer:clk_trans|clk_25M 
-    Info (332119):    -0.318              -0.318 clk 
+    Info (332119):    -2.174          -12765.016 clock_frequency_transfer:clk_trans|clk_25M 
+    Info (332119):    -0.398              -0.453 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5074 megabytes
-    Info: Processing ended: Mon Dec 31 18:05:22 2018
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 5106 megabytes
+    Info: Processing ended: Mon Dec 31 23:44:03 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:24
 
 

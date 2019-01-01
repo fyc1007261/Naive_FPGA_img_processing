@@ -1,7 +1,15 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="img_process">
-		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom_last|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_4ff1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_4ff1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom_4|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_edf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom_8|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_edf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|lpm_divide:Div4" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_edf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom_2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_edf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img_process|rom:img_rom_6|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_edf1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

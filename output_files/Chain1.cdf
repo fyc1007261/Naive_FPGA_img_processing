@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(5CSEMA5) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/altera/13.1/img_processing/output_files/") File("img_process.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/altera/13.1/img_processing/Naive_FPGA_img_processing/output_files/") File("img_process.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

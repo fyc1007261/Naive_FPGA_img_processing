@@ -26,8 +26,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "address[15..0]" (rect 0 0 82 14)(font "Arial" (font_size 8)))
-		(text "address[15..0]" (rect 4 16 85 31)(font "Arial" (font_size 8)))
+		(text "address[13..0]" (rect 0 0 82 14)(font "Arial" (font_size 8)))
+		(text "address[13..0]" (rect 4 16 85 31)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 88 32)(line_width 3))
 	)
 	(port
@@ -40,13 +40,13 @@ applicable agreement for further details.
 	(port
 		(pt 216 32)
 		(output)
-		(text "q[71..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
-		(text "q[71..0]" (rect 169 16 211 31)(font "Arial" (font_size 8)))
+		(text "q[23..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
+		(text "q[23..0]" (rect 169 16 211 31)(font "Arial" (font_size 8)))
 		(line (pt 216 32)(pt 160 32)(line_width 3))
 	)
 	(drawing
-		(text "72 bits" (rect 106 29 198 170)(font "Arial" )(vertical))
-		(text "65536 words" (rect 120 16 230 206)(font "Arial" )(vertical))
+		(text "24 bits" (rect 106 29 198 170)(font "Arial" )(vertical))
+		(text "16384 words" (rect 120 16 230 206)(font "Arial" )(vertical))
 		(text "Block type: AUTO" (rect 48 111 186 236)(font "Arial" ))
 		(line (pt 104 24)(pt 136 24))
 		(line (pt 136 24)(pt 136 96))

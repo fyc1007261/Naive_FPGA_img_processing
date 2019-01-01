@@ -36,9 +36,9 @@ module rom (
 	clock,
 	q);
 
-	input	[15:0]  address;
+	input	[13:0]  address;
 	input	  clock;
-	output	[71:0]  q;
+	output	[23:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -70,15 +70,15 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
 // Retrieval info: PRIVATE: MIFfilename STRING "../img.mif"
-// Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "65536"
+// Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "16384"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 // Retrieval info: PRIVATE: RegOutput NUMERIC "1"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "0"
-// Retrieval info: PRIVATE: WidthAddr NUMERIC "16"
-// Retrieval info: PRIVATE: WidthData NUMERIC "72"
+// Retrieval info: PRIVATE: WidthAddr NUMERIC "14"
+// Retrieval info: PRIVATE: WidthData NUMERIC "24"
 // Retrieval info: PRIVATE: rden NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
@@ -88,19 +88,19 @@ endmodule
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "65536"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "16384"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "ROM"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "16"
-// Retrieval info: CONSTANT: WIDTH_A NUMERIC "72"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "14"
+// Retrieval info: CONSTANT: WIDTH_A NUMERIC "24"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
-// Retrieval info: USED_PORT: address 0 0 16 0 INPUT NODEFVAL "address[15..0]"
+// Retrieval info: USED_PORT: address 0 0 14 0 INPUT NODEFVAL "address[13..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
-// Retrieval info: USED_PORT: q 0 0 72 0 OUTPUT NODEFVAL "q[71..0]"
-// Retrieval info: CONNECT: @address_a 0 0 16 0 address 0 0 16 0
+// Retrieval info: USED_PORT: q 0 0 24 0 OUTPUT NODEFVAL "q[23..0]"
+// Retrieval info: CONNECT: @address_a 0 0 14 0 address 0 0 14 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 72 0 @q_a 0 0 72 0
+// Retrieval info: CONNECT: q 0 0 24 0 @q_a 0 0 24 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom.cmp FALSE

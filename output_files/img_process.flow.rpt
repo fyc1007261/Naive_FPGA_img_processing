@@ -1,5 +1,5 @@
 Flow report for img_process
-Mon Dec 31 18:05:25 2018
+Mon Dec 31 23:44:07 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,19 +40,19 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Mon Dec 31 18:05:25 2018      ;
+; Flow Status                     ; Successful - Mon Dec 31 23:44:07 2018      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; img_process                                ;
 ; Top-level Entity Name           ; img_process                                ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Preliminary                                ;
-; Logic utilization (in ALMs)     ; 208 / 32,070 ( < 1 % )                     ;
-; Total registers                 ; 58                                         ;
-; Total pins                      ; 31 / 457 ( 7 % )                           ;
+; Logic utilization (in ALMs)     ; 887 / 32,070 ( 3 % )                       ;
+; Total registers                 ; 76                                         ;
+; Total pins                      ; 37 / 457 ( 8 % )                           ;
 ; Total virtual pins              ; 0                                          ;
-; Total block memory bits         ; 3,145,728 / 4,065,280 ( 77 % )             ;
-; Total DSP Blocks                ; 2 / 87 ( 2 % )                             ;
+; Total block memory bits         ; 1,966,080 / 4,065,280 ( 48 % )             ;
+; Total DSP Blocks                ; 15 / 87 ( 17 % )                           ;
 ; Total HSSI RX PCSs              ; 0                                          ;
 ; Total HSSI PMA RX Deserializers ; 0                                          ;
 ; Total HSSI TX PCSs              ; 0                                          ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/31/2018 18:03:24 ;
+; Start date & time ; 12/31/2018 23:42:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; img_process         ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 88491858679371.154625060414560 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 88491858679371.154627092938268 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ROM: 1-PORT                    ; --            ; --          ; --             ;
@@ -99,12 +99,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4778 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:01:17     ; 2.5                     ; 6086 MB             ; 00:01:53                           ;
-; Assembler                 ; 00:00:16     ; 1.0                     ; 4812 MB             ; 00:00:17                           ;
-; TimeQuest Timing Analyzer ; 00:00:13     ; 1.7                     ; 5074 MB             ; 00:00:20                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4690 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:52     ; --                      ; --                  ; 00:02:36                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4758 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:01:12     ; 2.0                     ; 6176 MB             ; 00:01:54                           ;
+; Assembler                 ; 00:00:15     ; 1.0                     ; 4816 MB             ; 00:00:16                           ;
+; TimeQuest Timing Analyzer ; 00:00:15     ; 1.9                     ; 5106 MB             ; 00:00:24                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4698 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:49     ; --                      ; --                  ; 00:02:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

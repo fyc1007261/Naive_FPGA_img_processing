@@ -1,5 +1,5 @@
 Assembler report for img_process
-Mon Dec 31 18:05:06 2018
+Mon Dec 31 23:43:46 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 31 18:05:06 2018 ;
+; Assembler Status      ; Successful - Mon Dec 31 23:43:46 2018 ;
 ; Revision Name         ; img_process                           ;
 ; Top-level Entity Name ; img_process                           ;
 ; Family                ; Cyclone V                             ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                                       ;
 +----------------+-----------------------------------------------------------------------------------------------+
 ; Device         ; 5CSEMA5F31C6                                                                                  ;
-; JTAG usercode  ; 0x07B40E89                                                                                    ;
-; Checksum       ; 0x07B40E89                                                                                    ;
+; JTAG usercode  ; 0x037C90F7                                                                                    ;
+; Checksum       ; 0x037C90F7                                                                                    ;
 +----------------+-----------------------------------------------------------------------------------------------+
 
 
@@ -103,13 +103,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Dec 31 18:04:50 2018
+    Info: Processing started: Mon Dec 31 23:43:31 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off img_process -c img_process
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4820 megabytes
-    Info: Processing ended: Mon Dec 31 18:05:06 2018
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Mon Dec 31 23:43:47 2018
     Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
 
 

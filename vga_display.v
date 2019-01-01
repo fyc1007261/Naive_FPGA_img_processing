@@ -26,7 +26,7 @@ module vga_display(
 	parameter integer back_porch_v = 33;
 	parameter integer whole_line_v = 525;
 	
-	/*generate the hs && vs timing*/
+
 	always@(posedge(clk)) 
 	begin
 		if (!reset)
@@ -34,7 +34,6 @@ module vga_display(
 			Hcnt = 0;
 			Vcnt = 0;
 		end
-		/*conditions of reseting Hcnter && Vcnter*/
 		else
 		begin
 			Hcnt = Hcnt + 1;
@@ -42,9 +41,11 @@ module vga_display(
 			begin
 				Hcnt = 0;
 				Vcnt = Vcnt + 1;
-				if( Vcnt == whole_line_v)
+				if(Vcnt == whole_line_v)
 					Vcnt = 0;
 			end
 		end
 	end
 endmodule
+
+
